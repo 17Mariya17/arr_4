@@ -1,32 +1,231 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    <h1>ДЗ 15. Масив</h1>
+  </head>
+  <body>
+    <h1>ДЗ 16. Пошук у масиві</h1>
     <script>
-// Знайти суму та кількість позитивних елементів.
-let array = [16,-37,54,-4,72,-56,47,4, -16,25,-37,46,4,-51,27,-63,4,-54,76,-4,12,-35,4,47];
-// Знайти мінімальний елемент масиву та його порядковий номер.
-// Знайти максимальний елемент масиву та його порядковий номер.
-// Визначити кількість негативних елементів.
-// Знайти кількість непарних позитивних елементів.
-// Знайти кількість парних позитивних елементів.
-// Знайти суму парних позитивних елементів.
-// Знайти суму непарних позитивних елементів.
-// Знайти добуток позитивних елементів.
-// Знайти найбільший серед елементів масиву, ост альні обнулити.
+      // Define array
+      let array = [
+        16, -37, 54, -4, 72, -56, 47, 4, -16, 25, -37, 46, 4, -51, 27, -63, 4,
+        -54, 76, -4, 12, -35, 4, 47,
+      ];
+      // Post the array
+      document.write("<b> Масив: </b> <br>" + array + "<br> <br>");
 
-      
-    //   // Видалити елементи з масиву з 2 по 4 (включно!).
-    //   document.write(
-    //     "<br> <b> 3. Видалити елементи з масиву з 2 по 4 (включно!): </b>" +
-    //       array.slice(0, 1).concat(array.slice(4)) +
-    //       "<br>"
-    //   );
+      //1. Знайти суму та кількість позитивних елементів.
+      let task_1 = (array) => {
+        // Define sum array - here we will put numbers
+        let sum = 0;
+        let quantity = 0;
+        // For each element
+        array.forEach((element) => {
+          // if element is positive - add it to the sum array
+          if (element > -1) {
+            sum = sum + element;
+            quantity = quantity + 1;
+          }
+        });
+        // Log the sum and quantity of elements
+        document.write(
+          "<b> 1. Знайти суму та кількість позитивних елементів: </b> <br>" +
+            "Кількість елементів: " +
+            quantity +
+            "<br>" +
+            "Сума елементів: " +
+            sum +
+            "<br> <br>"
+        );
+      };
+
+      task_1(array);
+
+      //2. Знайти мінімальний елемент масиву та його індекс.
+      document.write(
+        "<b> 2. Знайти мінімальний елемент масиву та його індекс: </b> <br>" +
+          "Мінімальний елемент: " +
+          Math.min(...array) +
+          "<br>" +
+          "Індекс елементу: " +
+          array.indexOf(Math.min(...array)) +
+          "<br> <br>"
+      );
+
+      //3. Знайти максимальний елемент масиву та його індекс.
+      document.write(
+        "<b> 3. Знайти максимальний елемент масиву та його індекс: </b> <br>" +
+          "Максимальний елемент: " +
+          Math.max(...array) +
+          "<br>" +
+          "Індекс елементу: " +
+          array.indexOf(Math.max(...array)) +
+          "<br> <br>"
+      );
+
+      //4. Визначити кількість негативних елементів.
+      let task_4 = (array) => {
+        // Define quantity array - here we will put numbers
+        let quantity = 0;
+        // For each element
+        array.forEach((element) => {
+          // if element is positive - add it to the sum array
+          if (element < -1) {
+            quantity = quantity + 1;
+          }
+        });
+        // Log the quantity of elements
+        document.write(
+          "<b> 4. Знайти кількість негативних елементів: </b> <br>" +
+            "Кількість елементів: " +
+            quantity +
+            "<br> <br>"
+        );
+      };
+
+      task_4(array);
+
+      //5. Знайти кількість непарних позитивних елементів.
+      let task_5 = (array) => {
+        // Define quantity array - here we will put numbers
+        let quantity = 0;
+        // For each element
+        array.forEach((element) => {
+          // if element is positive - add it to the sum array
+          if (element > -1 && element % 2 != 0) {
+            quantity = quantity + 1;
+          }
+        });
+        // Log the quantity of elements
+        document.write(
+          "<b> 5. Знайти кількість непарних позитивних елементів: </b> <br>" +
+            "Кількість елементів: " +
+            quantity +
+            "<br> <br>"
+        );
+      };
+
+      task_5(array);
+
+      //6. Знайти кількість парних позитивних елементів.
+      let task_6 = (array) => {
+        // Define quantity array - here we will put numbers
+        let quantity = 0;
+        // For each element
+        array.forEach((element) => {
+          // if element is positive - add it to the sum array
+          if (element > -1 && element % 2 === 0) {
+            quantity = quantity + 1;
+          }
+        });
+        // Log the quantity of elements
+        document.write(
+          "<b> 6. Знайти кількість парних позитивних елементів: </b> <br>" +
+            "Кількість елементів: " +
+            quantity +
+            "<br> <br>"
+        );
+      };
+
+      task_6(array);
+
+      //7. Знайти суму парних позитивних елементів.
+      let task_7 = (array) => {
+        // Define quantity array - here we will put numbers
+        let sum = 0;
+        // For each element
+        array.forEach((element) => {
+          // if element is positive - add it to the sum array
+          if (element > -1 && element % 2 === 0) {
+            sum = sum + element;
+          }
+        });
+        // Log the quantity of elements
+        document.write(
+          "<b> 7. Знайти суму парних позитивних елементів: </b> <br>" +
+            "Сума елементів: " +
+            sum +
+            "<br> <br>"
+        );
+      };
+
+      task_7(array);
+
+      //8. Знайти суму непарних позитивних елементів.
+      let task_8 = (array) => {
+        // Define quantity array - here we will put numbers
+        let sum = 0;
+        // For each element
+        array.forEach((element) => {
+          // if element is positive - add it to the sum array
+          if (element > -1 && element % 2 != 0) {
+            sum = sum + element;
+          }
+        });
+        // Log the quantity of elements
+        document.write(
+          "<b> 8. Знайти суму непарних позитивних елементів: </b> <br>" +
+            "Сума елементів: " +
+            sum +
+            "<br> <br>"
+        );
+      };
+
+      task_8(array);
+
+      //9. Знайти добуток позитивних елементів.
+      let task_9 = (array) => {
+        // Define sum array - here we will put numbers
+        let mult = 1;
+        // For each element
+        array.forEach((element) => {
+          // if element is positive - add it to the sum array
+          if (element > -1) {
+            mult = mult * element;
+          }
+        });
+        // Log the sum and quantity of elements
+        document.write(
+          "<b> 9. Знайти добуток позитивних елементів: </b> <br>" +
+            "Добуток елементів: " +
+            mult +
+            "<br> <br>"
+        );
+      };
+
+      task_9(array);
+
+      //10. Знайти найбільший серед елементів масиву, інші обнулити.
+      task_10 = (array) => {
+        // Define the max element index
+        let maxElementIndex = array.indexOf(Math.max(...array));
+        let array1 = array;
+        // For the elements before maxElementIndex
+        for (let i = 0; i < maxElementIndex; i++) {
+          array1[i] = 0;
+        }
+        // For the elements after maxElementIndex
+        for (let i = maxElementIndex + 1; i < array1.length; i++) {
+          array1[i] = 0;
+        }
+        // Log the results
+        document.write(
+          "<b> 10. Знайти найбільший серед елементів масиву, інші обнулити: </b> <br>" +
+            "Максимальний елемент: " +
+            Math.max(...array) +
+            "<br>" +
+            "Індекс елементу: " +
+            array.indexOf(Math.max(...array)) +
+            "<br>" +
+            "Зміненний масив: " +
+            array1 +
+            "<br> <br>"
+        );
+      };
+
+      task_10(array);
     </script>
   </body>
 </html>
